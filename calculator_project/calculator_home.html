@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator.page</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+  </head>
+  <body>
+    <div class="calculator">
+      <!-- this is for appending first number -->
+      <div class="display">
+        <div id="numOne"></div>
+        <!-- this is for appending operator -->
+        <div id="operatorId" class="operatorClass"></div>
+        <!-- this is for appending second number -->
+        <div id="numTwo"></div>
+        <!-- this is for appending result -->
+        <div id="result" class="result">ANS</div>
+      </div>
+      <div class="mainContainer">
+        <div class="numberBox">
+          <!-- this is for number -->
+          <button class="number" onclick="append(7)">7</button>
+          <button class="number" onclick="append(8)">8</button>
+          <button class="number" onclick="append(9)">9</button>
+          <button class="number" onclick="append(4)">4</button>
+          <button class="number" onclick="append(5)">5</button>
+          <button class="number" onclick="append(6)">6</button>
+          <button class="number" onclick="append(1)">1</button>
+          <button class="number" onclick="append(2)">2</button>
+          <button class="number" onclick="append(3)">3</button>
+          <span style="font-family: sans-serif;color: brown; font-size: 18pt;"><B>CALCULATOR</B> </span>
+          <span style="font-size: small; color: white;"><BR>MADE IN NEPAL <BR>PRODUCT OF BROTHER ELECTRONICS</BR></BR></span>
+        </div>
+        <div class="operatorBox">
+          <!-- this is for operator -->
+          <button class="operator" onclick="setOperator('+')">+</button>
+          <button class="operator" onclick="setOperator('-')">-</button>
+          <button class="operator" onclick="setOperator('*')">*</button>
+          <button class="operator" onclick="setOperator('/')">/</button>
+          <button class="operator" onclick="setOperator('%')">%</button>
+          <!-- this is for result -->
+          <button class="operator" onclick="findAns()">=</button>
+          <!-- this is for reset -->
+           <span class="ac" onclick="reset()">AC</span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="calculator.js"></script>
+</html>

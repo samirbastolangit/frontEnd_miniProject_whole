@@ -1,0 +1,77 @@
+.calculator {
+  border: 1px solid black;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 500px;
+  background-color: black;
+}
+.display {
+  background-color: rgba(193, 186, 186, 0.549);
+  width: 295px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 30px;
+  color: white;
+}
+.result {
+  border: 1px solid black;
+  position: fixed;
+  right: 23px;
+  top: 78px;
+  background-color: rgba(213, 255, 213, 0.791);
+}
+.operatorClass {
+  color: rgba(119, 251, 43, 0.664);
+  position: fixed;
+  right: 23px;
+  top: 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+.numberBox {
+  border: 1px solid black;
+  width: 240px;
+  height: 350px;
+  display: inline-block;
+  padding-top: 10px;
+}
+.numberBox button {
+  /* margin: 10px 7px; */
+  height: 60px;
+  margin-bottom: 30px;
+  width: 60px;
+  margin-left: 15px;
+  font-size: 30px;
+}
+.operatorBox {
+  border: 1px solid black;
+  height: 350px;
+  width: 50px;
+  display: inline-block;
+}
+.operatorBox button {
+  /* margin: 4px 15px ; */
+  margin-bottom: 10px;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+}
+.mainContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.ac {
+  color: rgb(230, 52, 52);
+  border: 2px solid green;
+  padding: 5px;
+  cursor: pointer;
+  background-color: gainsboro;
+}
