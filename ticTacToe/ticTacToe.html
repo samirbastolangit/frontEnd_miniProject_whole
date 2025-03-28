@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        div.grid{
+            background-color: #ed9595;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            gap: 5px;
+            width: 310px;
+            padding: 0;
+        }
+        div.grid button:hover{
+            cursor: pointer;
+        }
+        /* media queri one  */
+        @media screen and (max-width: 320px){
+            div.grid{
+            background-color: #ed9595;
+            display: grid;
+            grid-template-columns: 60px 60px 60px;
+            grid-template-rows: 60px 60px 60px;
+            gap: 5px;
+            width: auto;
+            padding: 0;
+        } 
+            h1{
+                font-size: 24px;
+            } 
+            div#displayFirstId{
+            background-color: #ffffffa2;
+            border:2px solid black;
+            border-radius: 20px;
+            padding: 15px;
+            font-size: 20px;
+        }
+        div.tap{
+            text-align: center;
+            font-size: 18px;
+            position: absolute;
+            z-index: 2;
+            font-weight: bolder;
+            color: yellow;
+            text-shadow: 2px 2px 2px black;
+            transform: translate(0,-50%);
+            top: 50%;
+            display: none;
+        }
+        }
+        /* media queri two  */
+        @media screen and (max-width: 200px){
+            div.grid{
+            background-color: #ed9595;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 40px 40px 40px ;
+            gap: 5px;
+            width: 100%;
+            padding: 0;
+        }   
+            h1{
+                font-size: 18px;
+            }
+            div#displayFirstId{
+            background-color: #ffffffa2;
+            border:2px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        div.tap{
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+            z-index: 2;
+            font-weight: bolder;
+            color: yellow;
+            text-shadow: 2px 2px 2px black;
+            top: 50%;
+            transform: translate(0,-50%);
+            display: none;
+        }    
+        }
+        
+        div#displayFirstId{
+            background-color: #ffffffa2;
+            border:2px solid black;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: 24pt;
+        }
+        div.tap{
+            text-align: center;
+            font-size: 30pt;
+            position: absolute;
+            z-index: 2;
+            font-weight: bolder;
+            color: yellow;
+            text-shadow: 2px 2px 2px black;
+            transform: translate(0,-50%);
+            top: 50%;
+            display: none;
+        }
+        button.restart{
+            background-color: greenyellow;
+            padding: 15px;
+            border-radius: 10px;
+
+        }
+        button.restart:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="restart" onclick="restart()">RESTART</button>
+    <div >
+        <h1>Welcome To Tic Tac Toe Game</h1>
+    <div style="position: relative;">
+            <div class="tap" id="tap">GAME OVER <BR>Tap restart to play again</BR></div>
+        <div class="grid" id="container">
+            <button id="btnOne" onclick="func('btnOne')"></button>
+            <button id="btnTwo" onclick="func('btnTwo')"></button>
+            <button id="btnThree" onclick="func('btnThree')"></button>
+            <button id="btnFour" onclick="func('btnFour')"></button>
+            <button id="btnFive" onclick="func('btnFive')"></button>
+            <button id="btnSix" onclick="func('btnSix')"></button>
+            <button id="btnSeven" onclick="func('btnSeven')"></button>
+            <button id="btnEight" onclick="func('btnEight')"></button>
+            <button id="btnNine" onclick="func('btnNine')"></button>
+        </div>
+    </div>
+    <p><span id="displayTurn"></span>'s turn tap to play</p>
+</div>
+    <div id="displayFirstId" style="display: none;">Winner: 
+        <button id="displayFirst"></button>
+    </div>
+</body>
+    <script src="ticTacToe.js"></script>
+</html>

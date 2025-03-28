@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #userText{
+            width: auto;
+/* word-wrap: break-word; */
+/* overflow-wrap: break-word; */
+/* white-space: normal; */
+            height: auto;
+        }
+        .searchBtnId{
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #c6f02ebb;
+            font-size: 15pt;
+            font-weight: bolder;
+            color:black ;
+        }
+        .searchBtnId:hover{
+            background-color: #92e97c;
+        }
+        #resultBox{
+            height: 300px;
+            width: 300px;
+            border: 2px solid black;
+            padding: 15px;
+            border-radius: 10px 15px;
+            visibility: hidden;
+        }
+        .min-display{
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #c6f02ebb;
+            font-size: 15pt;
+            font-weight: bolder;
+            color:black ;
+            border: 2px solid black;
+            display: inline-block;
+
+        }
+        .highlight{
+            background-color: rgb(226, 226, 28);
+        }
+    </style>
+</head>
+<body>
+    <h1>Search your word in your document</h1>
+    <textarea name="" id="userText" placeholder="paste your text here" required></textarea>
+    <br>
+    <input type="text" id="wordSearchId" placeholder="enter word to search">
+    <button type="submit" onclick="search()" class="searchBtnId" id="searchBtnId">Search</button>
+    <br>
+    <br>
+    <div id="resultBox"><span class="min-display">
+        Word count : 
+        <button id="wordCnt">
+            
+        </button>
+    </span>
+    <br>
+        <span class="min-display">
+        Your matching : 
+            <button id="YourChoiceCnt">
+            </button>
+        </span>
+        <div id="uInputId"></div>
+    </div>
+</body>
+<script>
+    console.log("wc to console");
+    const searchBtnId = document.getElementById("searchBtnId");
+    const userTextId = document.getElementById("userText");
+    const wordSearchId = document.getElementById("wordSearchId");
+    // function to search 
+    function search(){
+        document.getElementById("resultBox").style.visibility = "visible";
+        let userTextValue = userTextId.value.trimEnd();
+        let totalLetter = userTextValue.length;
+        let userSearchedValue = wordSearchId.value.trimEnd();
+        searchBtnId.style = "background-color :#33bd10; color: white;cursor: progress;";
+        const word = wordCount(totalLetter, userTextValue);
+        console.log("your total word is ",word);
+        document.getElementById("wordCnt").textContent = word;
+        // document.body.textContent = userTextValue;
+        // total word count
+
+        // function for searching
+        const pattern = new RegExp(userSearchedValue,"igm");
+        document.getElementById("YourChoiceCnt").textContent = userTextValue.match(pattern).length;
+
+        // displaying user input
+        display(userTextValue);
+        // highlight your result
+        const x = highlight(pattern,userTextValue);
+        if(document.getElementById("uInputId")){
+            document.getElementById("uInputId").innerHTML = x;
+        }
+        else{
+            console.error("Element with id 'output' not found."); 
+        }
+    }
+    // word count function
+    function wordCount(letter,texts){
+        let wordCounted = 1;
+        for(i = 0 ; i < letter ; i++){
+            if((texts.charAt(i) === ' ' ) && (texts.charAt(i+1) !== ' ')){
+                wordCounted++;
+            }
+        }
+        if(texts.charAt(0) === ' '){
+            return wordCounted-1;
+        }
+        if(texts === ""){
+            return 0;
+        }
+        return wordCounted;
+            }
+        // display text inside result-box function
+        function display(string){
+            document.getElementById("uInputId").textContent = string;
+        }
+        // highlighting the matched
+        function highlight(string, userText){
+            const highlightedText = userText.replace(string, (match) => `<span class="highlight">${match}</span>`);
+            return highlightedText;
+            }
+
+</script>
+</html>

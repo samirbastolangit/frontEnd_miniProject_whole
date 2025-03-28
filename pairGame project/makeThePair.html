@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make the pair</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        input{
+            height: 50px;
+            width: 120px;
+            font-size: 30pt;
+            background-color:  #ccffff;
+        }
+        #result{
+            display: inline-block;
+            height: 50px;
+            width: 120px;
+            font-size: 30pt;
+            background-color:  #ccffff;
+            border: 2px solid black;
+        }
+        body{
+            background-color:  #00ffcc;  
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%); 
+               }
+        #operator{
+            font-size: 30pt;
+            display: inline-block;
+        }
+        #equal{
+            font-size: 30pt;
+        }
+        .mainBox{
+          padding: 10px;
+          box-sizing: border-box;
+          border: 1px solid black;
+          display: grid;
+          grid-template-columns: auto auto auto auto ;
+          grid-template-rows: 50px 50px 50px;
+          height: 250px;
+          width: 700px;
+
+        }
+        .next{
+            /* position: absolute; */
+          /* top: 10px; */
+          /* right: 10px; */
+          grid-rows: 1/2;
+          grid-column: 4/5;
+        }
+        .skip{
+          grid-rows: 1 /2;
+          grid-column: 1/ 2;
+          
+          /* position: absolute; */
+          /* top: 10px; */
+          /* left: 10px; */
+        }
+        .check{
+          grid-row: 4/5;
+          grid-column: 2/4;
+        }
+        .innerBox{
+          grid-row: 2/3;
+          grid-column: 2/4;
+        }
+        #scoreBtn{
+        position: fixed;
+          top: -50px;
+          right: 0px;
+          width: 200px;
+          font-size: 20pt;
+          height: 40px;
+          border-radius: 10%;
+          background-color:  #ff9933;
+        }
+
+    </style>
+</head>
+<body>
+    <span id="scoreBtn">Score : <span id="scorepnt"></span></span>
+    <div class="mainBox">
+    <button class="skip" onclick="generateQuestion('skip')">skip</button>
+    <button class="next" onclick="generateQuestion('next')">next</button>
+    <div class="innerBox">
+      
+    <input id="num1" type="text">
+    <div id="operator">+</div>
+    <input id="num2" type="text" >
+    <span id="equal">=</span>
+    <div id="result" >10</div>
+    <div class="yourResult" style="font-size: 26pt;">your ans : <span id="yourResult"></span></div>
+  </div>
+    <button class="check" onclick="checkAns()">check</button>
+  </div>
+    <marquee behavior="" direction="left"><i style="color: red;">fill your choices inside empty box and check it...</i></marquee>
+    <!-- <button id="result"></button> -->
+</body>
+</html>
